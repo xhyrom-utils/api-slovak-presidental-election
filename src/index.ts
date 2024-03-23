@@ -65,7 +65,7 @@ app.get("/2024/regions", async (c) => {
         ISO_REGIONS[parseInt(id) as keyof typeof ISO_REGIONS],
         {
           votes: region.P_HL,
-          votes_percentage: parseFloat(region.P_HL_PCT),
+          votes_percentage: parseFloat(region.PROGRESS),
           attendance: region.UCAST,
           candidates: region.PS_LIST.filter((c: any) => c.POZNAMKA != "X").map(
             (candidate: any) => ({
