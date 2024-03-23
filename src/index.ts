@@ -57,7 +57,7 @@ app.get("/2024/regions", async (c) => {
           candidate.PRIEZVISKO.slice(1).toLocaleLowerCase(),
         title: candidate.TITUL,
         votes: candidate.P_HL,
-        votes_percentage: parseFloat(candidate.PROGRESS),
+        votes_percentage: parseFloat(candidate.P_HL_PCT),
       })
     ),
     regions: Object.fromEntries(
@@ -75,7 +75,7 @@ app.get("/2024/regions", async (c) => {
                 candidate.PRIEZVISKO.slice(1).toLocaleLowerCase(),
               title: candidate.TITUL,
               votes: candidate.P_HL,
-              votes_percentage: parseFloat(candidate.PROGRESS),
+              votes_percentage: parseFloat(candidate.P_HL_PCT),
             })
           ),
         },
@@ -113,7 +113,7 @@ app.get("/2024/region/:region", async (c) => {
           candidate.PRIEZVISKO.slice(1).toLocaleLowerCase(),
         title: candidate.TITUL,
         votes: candidate.P_HL,
-        votes_percentage: parseFloat(candidate.PROGRESS),
+        votes_percentage: parseFloat(candidate.P_HL_PCT),
       })
     ),
     districts,
