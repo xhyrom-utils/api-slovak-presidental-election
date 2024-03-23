@@ -19,7 +19,7 @@ app.get("/2024", async (c) => {
   return c.json({
     data: {
       votes: data.P_HL,
-      votes_percentage: data.P_HL_PCT,
+      votes_percentage: data.PROGRESS,
       attendance: data.UCAST,
     },
     whole: data.PS_LIST.filter((c: any) => c.POZNAMKA != "X").map(
@@ -46,7 +46,7 @@ app.get("/2024/regions", async (c) => {
   return c.json({
     data: {
       votes: data.P_HL,
-      votes_percentage: data.P_HL_PCT,
+      votes_percentage: data.PROGRESS,
       attendance: data.UCAST,
     },
     whole: data.PS_LIST.filter((c: any) => c.POZNAMKA != "X").map(
@@ -103,7 +103,7 @@ app.get("/2024/region/:region", async (c) => {
 
   return c.json({
     votes: req.P_HL,
-    votes_percentage: parseFloat(req.P_HL_PCT),
+    votes_percentage: parseFloat(req.PROGRESS),
     attendance: req.UCAST,
     candidates: req.PS_LIST.filter((c: any) => c.POZNAMKA != "X").map(
       (candidate: any) => ({
