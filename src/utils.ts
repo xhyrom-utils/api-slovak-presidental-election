@@ -28,7 +28,7 @@ export const getDistricts = async (
       districts.push({
         name: obvod.NAME,
         votes: obvod.P_HL,
-        votes_percentage: parseFloat(obvod.P_HL_PCT),
+        votes_percentage: parseFloat(obvod.PROGRESS),
         attendance: obvod.UCAST,
       });
     } else {
