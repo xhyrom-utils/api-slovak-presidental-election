@@ -29,3 +29,7 @@ export interface Slovakia {
   };
   whole: Candidate[];
 }
+
+export type SlovakiaAndRegions = Slovakia & {
+  regions: Record<string, Region>;
+};
