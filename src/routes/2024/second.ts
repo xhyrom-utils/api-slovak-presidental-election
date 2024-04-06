@@ -8,7 +8,7 @@ const router = new Hono();
 router.get("/", async (c) => {
   const data = (await (
     await fetch(
-      `https://services.cms.markiza.sk/data/volby2024data/prezident/1/homepage.json?_=${Date.now()}`
+      `https://services.cms.markiza.sk/data/volby2024data/prezident/2/homepage.json?_=${Date.now()}`
     )
   ).json()) as any;
 
@@ -35,7 +35,7 @@ router.get("/", async (c) => {
 router.get("/regions", async (c) => {
   const data = (await (
     await fetch(
-      `https://services.cms.markiza.sk/data/volby2024data/prezident/1/homepage.json?_=${Date.now()}`
+      `https://services.cms.markiza.sk/data/volby2024data/prezident/2/homepage.json?_=${Date.now()}`
     )
   ).json()) as any;
 
@@ -91,7 +91,7 @@ router.get("/region/:region", async (c) => {
 
   const req = (await (
     await fetch(
-      `https://services.cms.markiza.sk/data/volby2024data/prezident/1/${id}.json?_=${Date.now()}`
+      `https://services.cms.markiza.sk/data/volby2024data/prezident/2/${id}.json?_=${Date.now()}`
     )
   ).json()) as any;
 
