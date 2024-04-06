@@ -4,7 +4,7 @@ import { District } from "./types";
 export const fetchRegion = async (regionId: string): Promise<any> => {
   return (await (
     await fetch(
-      `https://services.cms.markiza.sk/data/volby2024data/prezident/1/${regionId}.json?_=${Date.now()}`
+      `https://services.cms.markiza.sk/data/volby2024data/prezident/2/${regionId}.json?_=${Date.now()}`
     )
   ).json()) as any;
 };
@@ -12,7 +12,7 @@ export const fetchRegion = async (regionId: string): Promise<any> => {
 export const fetchObvod = async (obvodId: string): Promise<any> => {
   return (await (
     await fetch(
-      `https://services.cms.markiza.sk/data/volby2024data/prezident/1/obvod-${obvodId}.json?_=${Date.now()}`
+      `https://services.cms.markiza.sk/data/volby2024data/prezident/2/obvod-${obvodId}.json?_=${Date.now()}`
     )
   ).json()) as any;
 };
