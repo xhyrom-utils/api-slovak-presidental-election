@@ -11,6 +11,7 @@ export interface District {
   votes: number;
   votes_percentage: number;
   attendance: number;
+  candidates: Candidate[];
 }
 
 export interface Region {

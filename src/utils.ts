@@ -30,6 +30,17 @@ export const getDistricts = async (
         votes: obvod.P_HL,
         votes_percentage: parseFloat(obvod.PROGRESS),
         attendance: obvod.UCAST,
+        candidates: obvod.PS_LIST.filter((c: any) => c.POZNAMKA != "X").map(
+          (candidate: any) => ({
+            first_name: candidate.MENO,
+            last_name:
+              candidate.PRIEZVISKO.slice(0, 1).toLocaleUpperCase() +
+              candidate.PRIEZVISKO.slice(1).toLocaleLowerCase(),
+            title: candidate.TITUL,
+            votes: candidate.P_HL,
+            votes_percentage: parseFloat(candidate.P_HL_PCT),
+          })
+        ),
       });
     } else {
       const obvodData = await fetchObvod(obvodId);
